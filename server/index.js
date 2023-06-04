@@ -11,8 +11,8 @@ app.use(express.json());
 
 
 //gets all word entries from the database
-app.get('/', (req, res) => {
-
+app.get('/gobag', (req, res) => {
+  res.send('get request successful')
 
 })
 
