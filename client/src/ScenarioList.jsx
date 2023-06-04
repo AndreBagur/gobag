@@ -5,7 +5,7 @@ import ScenarioListEntry from "./ScenarioListEntry.jsx";
 const ScenarioList = ({ scenarios }) => {
 
   return (
-    <div>
+    <div className="scenario-list">
       {scenarios.map((scenario, index)=> <ScenarioListEntry scenario={scenario} key={index}/>) }
     </div>
   )

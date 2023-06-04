@@ -14,7 +14,7 @@ const App = () => {
 
   return (
     <div>
-      <p>Go Bag</p>
+      <h1 >Go Bag</h1>
       <ScenarioList scenarios={ scenarios }/>
     </div>
 
