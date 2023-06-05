@@ -4,7 +4,7 @@ import ItemEntry from './ItemEntry.jsx';
 const ScenarioListEntry = ({scenario}) => {
 
   return (
-    <div>{scenario.description}
+    <div>
       {scenario.items.map((item, index)=><ItemEntry item={item} key={index} />)}
     </div>
 
@@ -12,3 +12,4 @@ const ScenarioListEntry = ({scenario}) => {
 }
 
 export default ScenarioListEntry
+
