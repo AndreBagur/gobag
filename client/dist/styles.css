@@ -21,7 +21,9 @@
   /* padding: 10px; */
   margin-right: 180px;
 }
-
+.scenario-count {
+  font-size: .5em;
+}
 #create-scenario-button {
   margin-top: 50px;
 }

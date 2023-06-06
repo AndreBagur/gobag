@@ -17,17 +17,18 @@ const ScenarioListEntry = ({scenario, targetScenario, setTargetScenario}) => {
 
     if (showInputBox) {
       if (newItem !== "") {
-        setNewItemArr(newItemArr.concat(newItem))
-        setNewItem("")
-        setShowInputBox(false)
+        setNewItemArr(newItemArr.concat(newItem));
+        setNewItemCount(newItemCount + 1);
+        setNewItem("");
+        setShowInputBox(false);
       } else {
-        setShowInputBox(false)
+        setShowInputBox(false);
       }
     } else {
-      setShowInputBox(true)
+      setShowInputBox(true);
     }
-
   }
+
 
   const [newItem, setNewItem] = useState('')
   const [newItemArr, setNewItemArr] = useState([]);
