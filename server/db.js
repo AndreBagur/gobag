@@ -18,9 +18,10 @@ const ScenarioEntry = mongoose.model('ScenarioEntry', entrySchema);
 module.exports = {
   getAll: () => {
     return ScenarioEntry.find({});
+  },
+  insertOne: (scenario) => {
+    return ScenarioEntry.create(scenario);
   }
-
-
 }
 
 

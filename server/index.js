@@ -20,6 +20,12 @@ app.get('/gobag', (req, res) => {
     res.send('error getting scenarios from the database', err);
   })
 
+app.post('/gobag', (req, res) => {
+  db.insertOne(req.body)
+  .then(()=>console.log('inserted successfully'))
+  .catch((err)=>console.log('error adding scenario to database', err))
+})
+
 })
 
 
