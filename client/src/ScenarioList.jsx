@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ScenarioListEntry from "./ScenarioListEntry.jsx";
 
 
 
 const ScenarioList = ({ scenarios, targetScenario, setTargetScenario }) => {
+    var count = 0;
+    var arrayOfScenarios = scenarios.filter((scenario)=>{return targetScenario.includes(scenario.description)})
+    arrayOfScenarios.forEach((scenario)=> {
+      count += scenario.items.length
+    })
+
 
   return (
     <div className="scenario-list">
-      {scenarios.filter((scenario)=>{return targetScenario.includes(scenario.description)}).map((scenario, index)=> <ScenarioListEntry scenario={scenario} targetScenario={targetScenario} setTargetScenario={setTargetScenario} key={index}/>) }
+      <p>Total tasks: {count}</p>
+      {arrayOfScenarios.map((scenario, index)=> <ScenarioListEntry scenario={scenario} targetScenario={targetScenario} setTargetScenario={setTargetScenario} key={index} count={count}/>) }
     </div>
   )
 }

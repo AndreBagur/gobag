@@ -4,7 +4,8 @@ import Button from '@mui/material/Button';
 
 const MODAL_STYLES = {
   position: 'fixed',
-  top: '50%',
+  fontSize: '2em',
+  top: '30%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
   backgroundColor: 'white',
@@ -61,22 +62,18 @@ const AddScenarioModal = ({open, onClose}) => {
       <form onSubmit={handleSubmit}>
         <h2>Add a scenario</h2>
         <label htmlFor="decription">
-          Description
-          <input type="text" name="description" id="description" onChange={(e)=>handleDescChange(e)}/>
+          Description<br></br>
+          <input type="text" name="description" id="asm-description" onChange={(e)=>handleDescChange(e)}/>
         </label>
         <br></br>
         <label htmlFor="items">
-          Items
-          <textarea type="text" name="items" id="items" maxLength="1000" onChange={(e)=>handleItemsChange(e)}/>
+          Items<br></br>
+          <textarea type="text" name="items" id="asm-items" maxLength="1000" onChange={(e)=>handleItemsChange(e)}/>
         </label>
         <br></br>
-        <Button variant="contained" type="submit">Submit</Button>
-        <br></br>
-        <Button variant="contained" onClick={onClose}>Exit without submitting</Button>
+        <Button variant="contained" id="asm-submit-btn" type="submit">Submit</Button>
+        <Button variant="contained" id="asm-exit-btn" onClick={onClose}>Exit</Button>
       </form>
-
-
-
     </div>
     </div>
   )
@@ -84,5 +81,3 @@ const AddScenarioModal = ({open, onClose}) => {
 
 export default AddScenarioModal
 
-//<button onClick={handleSubmit}>Submit</button>
-//<button onClick={onClose}>Exit</button>

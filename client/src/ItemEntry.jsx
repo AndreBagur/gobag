@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import Checkbox from '@mui/material/Checkbox';
 
 
 const ItemEntry = (item, key) => {
@@ -8,10 +8,11 @@ const ItemEntry = (item, key) => {
   const checkHandler = () => {
     setIsChecked(!isChecked);
   }
+  const label = { inputProps: { 'aria-label': 'Checkbox' } };
 
   return (
     <div className="item-entry">
-      <input type="checkbox" key={key} checked={isChecked} onChange={checkHandler}/>{item.item}
+      <Checkbox {...label} color="success"/>{item.item}
     </div>
   )
 };
@@ -22,3 +23,8 @@ export default ItemEntry
 //<a className="item-entry-delete-btn">delete</a>
 //<input type="checkbox" />
 
+/*
+    <div className="item-entry">
+      <input type="checkbox" key={key} checked={isChecked} onChange={checkHandler}/>{item.item}
+    </div>
+*/
