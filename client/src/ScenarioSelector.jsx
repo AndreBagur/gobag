@@ -9,7 +9,7 @@ const ScenarioSelector = ({ scenarios }) => {
       setTargetScenario(targetScenario.concat(e.target.value))
     }
 
-    console.log(targetScenario);
+    //console.log(targetScenario);
   }
 
 
@@ -20,7 +20,7 @@ const ScenarioSelector = ({ scenarios }) => {
         <option value="Choose a Scenario"></option>
         {scenarios.map((scenario, index)=><option key={index}>{scenario.description}</option>)}
       </select>
-      <ScenarioList scenarios={ scenarios } targetScenario={targetScenario}/>
+      <ScenarioList scenarios={ scenarios } targetScenario={targetScenario} setTargetScenario={setTargetScenario}/>
     </div>
   )
 }
