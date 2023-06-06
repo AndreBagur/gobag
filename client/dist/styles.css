@@ -49,6 +49,13 @@
   font-size: .75em;
 }
 
+#add-item-btn {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+
+}
+
 /* .item-entry:hover {
   background-color: rgb(29, 123, 206);
 } */

@@ -13,7 +13,6 @@ const ScenarioList = ({ scenarios, targetScenario, setTargetScenario }) => {
 
   return (
     <div className="scenario-list">
-      <p>{count} {count===1 ? " item" : " items"}</p>
       {arrayOfScenarios.map((scenario, index)=> <ScenarioListEntry scenario={scenario} targetScenario={targetScenario} setTargetScenario={setTargetScenario} key={index} count={count}/>) }
     </div>
   )
@@ -23,3 +22,6 @@ const ScenarioList = ({ scenarios, targetScenario, setTargetScenario }) => {
 export default ScenarioList
 
 //{scenarios.filter((scenario)=>{return scenario.description===targetScenario})
+
+
+//<p>{count} {count===1 ? " item" : " items"}</p>
