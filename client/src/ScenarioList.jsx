@@ -13,7 +13,7 @@ const ScenarioList = ({ scenarios, targetScenario, setTargetScenario }) => {
 
   return (
     <div className="scenario-list">
-      <p>Total tasks: {count}</p>
+      <p>{count} {count===1 ? " item" : " items"}</p>
       {arrayOfScenarios.map((scenario, index)=> <ScenarioListEntry scenario={scenario} targetScenario={targetScenario} setTargetScenario={setTargetScenario} key={index} count={count}/>) }
     </div>
   )

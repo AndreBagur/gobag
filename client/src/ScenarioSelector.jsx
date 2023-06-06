@@ -21,7 +21,7 @@ const ScenarioSelector = ({ scenarios }) => {
   return (
     <div className="scenario-selector-div">
       <FormControl fullWidth>
-        <InputLabel id="scenario-selector-input">Choose a scenario to add</InputLabel>
+        <InputLabel id="scenario-selector-input">Choose a scenario</InputLabel>
         <Select
           labelId="scenario-selector"
           id="scenario-selector"

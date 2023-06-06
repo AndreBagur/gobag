@@ -26,10 +26,11 @@ const App = () => {
 
   return (
     <div>
-      <h1>Go Bag Emergency Preparedness Checklist</h1>
+      <h1>Go Bag</h1>
+      <h2>Emergency Preparedness Checklist</h2>
       <ScenarioSelector scenarios={scenarios}/>
       <AddScenarioModal open={addScenarioModalShow} onClose={addScenarioModalClose} />
-      <Button variant="contained" onClick={()=>{setAddScenarioModalShow(true)}}>Create your own scenario</Button>
+      <Button variant="contained" id="create-scenario-btn" onClick={()=>{setAddScenarioModalShow(true)}}>Create your own scenario</Button>
     </div>
 
 
