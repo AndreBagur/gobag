@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import Checkbox from '@mui/material/Checkbox';
 
 
-const ItemEntry = (item, key) => {
+
+const ItemEntry = (item, key, itemCount) => {
   const [checked, setChecked] = useState(false);
   const [checkedCount, setCheckedCount] = useState(0);
   //console.log(item);
@@ -29,6 +30,7 @@ const ItemEntry = (item, key) => {
     <div className="item-entry" >
       <Checkbox {...label} checked={checked} onChange={(e)=>checkHandler(e)} color="success"/>{item.item}
     </div>
+
     </div>
 
   )

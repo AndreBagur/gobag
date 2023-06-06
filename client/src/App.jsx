@@ -21,12 +21,18 @@ const App = () => {
       .catch((err) => {
         console.log('there is an error getting scenarios', err);
       });
-  }, []);
+  }, [scenarios]);
 
+
+
+  const handleClick = () => {
+    console.log(document.getElementsByClassName('item-entry').length);
+  }
 
   return (
     <div>
       <h1>Go Bag</h1>
+      <button onClick={handleClick}>click</button>
       <h2>Emergency Preparedness Checklist</h2>
       <ScenarioSelector scenarios={scenarios}/>
       <AddScenarioModal open={addScenarioModalShow} onClose={addScenarioModalClose} />

@@ -25,7 +25,7 @@ const ScenarioSelector = ({ scenarios }) => {
         <Select
           labelId="scenario-selector"
           id="scenario-selector"
-          value={targetScenario}
+          value=""
           label="choose-a-scenario"
           onChange={handleChange}>
           {scenarios.map((scenario, index)=><MenuItem value={scenario.description} key={index}>{scenario.description}</MenuItem>)}

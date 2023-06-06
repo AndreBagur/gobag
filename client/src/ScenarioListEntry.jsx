@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ItemEntry from './ItemEntry.jsx';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
+//import Input from '@mui/joy/Input';
+
+
 
 
 const ScenarioListEntry = ({scenario, targetScenario, setTargetScenario}) => {
@@ -18,7 +21,7 @@ const ScenarioListEntry = ({scenario, targetScenario, setTargetScenario}) => {
     if (showInputBox) {
       if (newItem !== "") {
         setNewItemArr(newItemArr.concat(newItem));
-        setNewItemCount(newItemCount + 1);
+        setItemCount(itemCount+1)
         setNewItem("");
         setShowInputBox(false);
       } else {
@@ -36,15 +39,23 @@ const ScenarioListEntry = ({scenario, targetScenario, setTargetScenario}) => {
   const handleChange = (e) => {
     setNewItem(e.target.value);
   }
+  const [itemCount, setItemCount] = useState(0);
+  useEffect(() => {
+    const allWithClass = Array.from(
+      document.getElementsByClassName('item-entry')
+    );
+    setItemCount(allWithClass.length);
+    console.log(allWithClass.length);
+  }, [itemCount]);
 
   return (
     <div>
       <div className="scenario-description">{scenario.description}<Button variant="outlined" className="scenario-description-btn" onClick={(e)=>handleRemoveClick(e)} startIcon={<DeleteIcon />}>
         Delete
       </Button></div>
-      {scenario.items.map((item, index)=><ItemEntry item={item} key={index} />)}
+      {scenario.items.map((item, index)=><ItemEntry item={item} key={index} itemCount={itemCount} setItemCount={setItemCount} />)}
       {newItemArr.map((item, index)=><ItemEntry item={item} key={index} />)}
-      <button id="add-item-btn" onClick={handleInputBoxClick}>+</button>{showInputBox? <input onChange={(e)=>handleChange(e)}></input> : null}
+      <button id="add-item-btn" onClick={handleInputBoxClick}>+</button>{showInputBox? <input onChange={(e)=>handleChange(e)}/> : null}
     </div>
 
   )
