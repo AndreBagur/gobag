@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 import ScenarioList from './ScenarioList.jsx';
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 const ScenarioSelector = ({ scenarios }) => {
   const [targetScenario, setTargetScenario] = useState([])
@@ -14,12 +19,18 @@ const ScenarioSelector = ({ scenarios }) => {
 
 
   return (
-    <div>
-      <h2>Choose a scenario</h2>
-      <select className="scenario-selector"  onChange={(e)=>handleChange(e)}>
-        <option value="Choose a Scenario"></option>
-        {scenarios.map((scenario, index)=><option key={index}>{scenario.description}</option>)}
-      </select>
+    <div className="scenario-selector-div">
+      <FormControl fullWidth>
+        <InputLabel id="scenario-selector-input">Choose a scenario to add</InputLabel>
+        <Select
+          labelId="scenario-selector"
+          id="scenario-selector"
+          value={targetScenario}
+          label="choose-a-scenario"
+          onChange={handleChange}>
+          {scenarios.map((scenario, index)=><MenuItem value={scenario.description} key={index}>{scenario.description}</MenuItem>)}
+        </Select>
+      </FormControl>
       <ScenarioList scenarios={ scenarios } targetScenario={targetScenario} setTargetScenario={setTargetScenario}/>
     </div>
   )
@@ -27,4 +38,3 @@ const ScenarioSelector = ({ scenarios }) => {
 
 export default ScenarioSelector
 
-//value={targetScenario}

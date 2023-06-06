@@ -3,7 +3,7 @@ import axios from 'axios';
 import ScenarioSelector from './ScenarioSelector.jsx'
 import ScenarioList from './ScenarioList.jsx';
 import AddScenarioModal from './AddScenarioModal.jsx';
-
+import Button from '@mui/material/Button';
 const App = () => {
 
   const [scenarios, setScenarios] = useState([]);
@@ -29,7 +29,7 @@ const App = () => {
       <h1>Go Bag Emergency Preparedness Checklist</h1>
       <ScenarioSelector scenarios={scenarios}/>
       <AddScenarioModal open={addScenarioModalShow} onClose={addScenarioModalClose} />
-      <button onClick={()=>{setAddScenarioModalShow(true)}}>Add a scenario</button>
+      <Button variant="contained" onClick={()=>{setAddScenarioModalShow(true)}}>Create your own scenario</Button>
     </div>
 
 

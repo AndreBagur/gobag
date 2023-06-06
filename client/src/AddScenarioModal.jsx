@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import Button from '@mui/material/Button';
 
 const MODAL_STYLES = {
   position: 'fixed',
@@ -69,7 +69,10 @@ const AddScenarioModal = ({open, onClose}) => {
           Items
           <textarea type="text" name="items" id="items" maxLength="1000" onChange={(e)=>handleItemsChange(e)}/>
         </label>
-        <button type="submit">Submit</button>
+        <br></br>
+        <Button variant="contained" type="submit">Submit</Button>
+        <br></br>
+        <Button variant="contained" onClick={onClose}>Exit without submitting</Button>
       </form>
 
 
