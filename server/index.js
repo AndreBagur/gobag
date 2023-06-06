@@ -10,9 +10,15 @@ app.use(express.static(path.join(__dirname, "../client/dist")));
 app.use(express.json());
 
 
-//gets all word entries from the database
+//gets all scenario entries from the database
 app.get('/gobag', (req, res) => {
-  res.send('get request successful')
+  db.getAll()
+  .then((scenarios) => {
+    res.send(scenarios);
+  })
+  .catch((err) => {
+    res.send('error getting scenarios from the database', err);
+  })
 
 })
 

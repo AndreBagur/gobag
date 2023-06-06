@@ -17,5 +17,13 @@
   font-size: 1.5em;
 }
 
+.item-entry {
+  width: 500px;
+}
+
+.item-entry:hover {
+  background-color: rgb(29, 123, 206);
+}
+
 
 
