@@ -15,10 +15,15 @@ const ScenarioList = ({ scenarios, targetScenario, setTargetScenario }) => {
 
   return (
     <div className="scenario-list">
-      {numOfScenarios <= 3 ? <div><CircularProgress size="lg" determinate value={percentage}>
-        {numOfScenarios} / 3
-      </CircularProgress><small id="progress-message">{message[numOfScenarios]}</small></div> : null}
-      <p id="scenario-count">{numOfScenarios}{(numOfScenarios)===1 ? " scenario:" : " scenarios:"}</p>
+      <p id="progress-message">{message[numOfScenarios]}</p>
+      {numOfScenarios <= 3 ?
+      <div id="progress-circle">
+        <CircularProgress sx={{"--CircularProgress-size": "70px"}} determinate value={percentage}>
+          {numOfScenarios} / 3
+        </CircularProgress>
+      </div> : null}
+      {numOfScenarios > 3 ? <div><p id="scenario-count">{numOfScenarios} scenarios:</p></div> : null }
+
       {scenarios.filter((scenario)=>{return targetScenario.includes(scenario.description)}).map((scenario, index)=> <ScenarioListEntry scenario={scenario} targetScenario={targetScenario} setTargetScenario={setTargetScenario} key={index}/>) }
     </div>
   )

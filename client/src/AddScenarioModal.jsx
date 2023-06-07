@@ -6,7 +6,7 @@ import Textarea from '@mui/joy/Textarea';
 
 const MODAL_STYLES = {
   position: 'fixed',
-  fontSize: '2em',
+  fontSize: '1.2em',
   top: '30%',
   left: '50%',
   transform: 'translate(-50%, -50%)',

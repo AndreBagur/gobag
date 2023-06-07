@@ -6,6 +6,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
+
 const ScenarioSelector = ({ scenarios }) => {
   const [targetScenario, setTargetScenario] = useState([])
 
@@ -21,7 +22,9 @@ const ScenarioSelector = ({ scenarios }) => {
   }
 
   const handleClick = (e) => {
+
     setTimeout(updateCount, 1000)
+
   }
 
 
