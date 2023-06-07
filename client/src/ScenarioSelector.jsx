@@ -13,9 +13,17 @@ const ScenarioSelector = ({ scenarios }) => {
     if (!targetScenario.includes(e.target.value)) {
       setTargetScenario(targetScenario.concat(e.target.value))
     }
-
-    //console.log(targetScenario);
   }
+
+
+  const updateCount = () => {
+    //console.log('update count',document.getElementsByClassName('item-entry').length)
+  }
+
+  const handleClick = (e) => {
+    setTimeout(updateCount, 1000)
+  }
+
 
 
   return (
@@ -27,7 +35,8 @@ const ScenarioSelector = ({ scenarios }) => {
           id="scenario-selector"
           value=""
           label="choose-a-scenario"
-          onChange={handleChange}>
+          onChange={handleChange}
+          onClick={handleClick}>
           {scenarios.map((scenario, index)=><MenuItem value={scenario.description} key={index}>{scenario.description}</MenuItem>)}
         </Select>
       </FormControl>

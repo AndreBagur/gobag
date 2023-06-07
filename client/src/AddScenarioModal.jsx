@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Button from '@mui/material/Button';
+import Input from '@mui/joy/Input';
+import Textarea from '@mui/joy/Textarea';
 
 const MODAL_STYLES = {
   position: 'fixed',
@@ -63,12 +65,12 @@ const AddScenarioModal = ({open, onClose}) => {
         <h2>Add a scenario</h2>
         <label htmlFor="decription">
           Description<br></br>
-          <input type="text" name="description" id="asm-description" onChange={(e)=>handleDescChange(e)}/>
+          <Input type="text" name="description" id="asm-description" onChange={(e)=>handleDescChange(e)}/>
         </label>
         <br></br>
         <label htmlFor="items">
           Items<br></br>
-          <textarea type="text" name="items" id="asm-items" maxLength="1000" onChange={(e)=>handleItemsChange(e)}/>
+          <Textarea type="text" name="items" id="asm-items" minRows={2} onChange={(e)=>handleItemsChange(e)}/>
         </label>
         <br></br>
         <Button variant="contained" id="asm-submit-btn" type="submit">Submit</Button>

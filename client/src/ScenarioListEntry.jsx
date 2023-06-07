@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import ItemEntry from './ItemEntry.jsx';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
-//import Input from '@mui/joy/Input';
+import Input from '@mui/joy/Input';
 
 
 
 
-const ScenarioListEntry = ({scenario, targetScenario, setTargetScenario}) => {
+const ScenarioListEntry = ({scenario, targetScenario, setTargetScenario }) => {
 
   const handleRemoveClick = (e) => {
     setTargetScenario(targetScenario.filter((element)=>element !== scenario.description));
@@ -21,7 +21,6 @@ const ScenarioListEntry = ({scenario, targetScenario, setTargetScenario}) => {
     if (showInputBox) {
       if (newItem !== "") {
         setNewItemArr(newItemArr.concat(newItem));
-        setItemCount(itemCount+1)
         setNewItem("");
         setShowInputBox(false);
       } else {
@@ -39,23 +38,28 @@ const ScenarioListEntry = ({scenario, targetScenario, setTargetScenario}) => {
   const handleChange = (e) => {
     setNewItem(e.target.value);
   }
-  const [itemCount, setItemCount] = useState(0);
-  useEffect(() => {
-    const allWithClass = Array.from(
-      document.getElementsByClassName('item-entry')
-    );
-    setItemCount(allWithClass.length);
-    console.log(allWithClass.length);
-  }, [itemCount]);
 
+  const [expanded, setExpanded] = useState(true);
+
+  const handleCollapseClick = () => {
+    setExpanded(!expanded)
+  }
+
+  const handleKeyPress = (e)=> {
+    if (e.key === 'Enter') {
+      handleInputBoxClick();
+    }
+  }
+  console.log(scenario.description)
   return (
     <div>
       <div className="scenario-description">{scenario.description}<Button variant="outlined" className="scenario-description-btn" onClick={(e)=>handleRemoveClick(e)} startIcon={<DeleteIcon />}>
         Delete
-      </Button></div>
-      {scenario.items.map((item, index)=><ItemEntry item={item} key={index} itemCount={itemCount} setItemCount={setItemCount} />)}
+      </Button></div>{expanded ? <div>{scenario.items.map((item, index)=><ItemEntry item={item} key={index} />)}
       {newItemArr.map((item, index)=><ItemEntry item={item} key={index} />)}
-      <button id="add-item-btn" onClick={handleInputBoxClick}>+</button>{showInputBox? <input onChange={(e)=>handleChange(e)}/> : null}
+      {showInputBox? <Input onChange={(e)=>handleChange(e)} onKeyPress={(e)=>handleKeyPress(e)} /> : null}</div> : null}
+      <Button onClick={handleCollapseClick}>{expanded ? "collapse " : "expand "} items</Button>
+      <Button id="add-item-btn" onClick={handleInputBoxClick}>+ item</Button>
     </div>
 
   )

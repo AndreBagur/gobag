@@ -4,15 +4,19 @@ import ScenarioSelector from './ScenarioSelector.jsx'
 import ScenarioList from './ScenarioList.jsx';
 import AddScenarioModal from './AddScenarioModal.jsx';
 import Button from '@mui/material/Button';
+
+
 const App = () => {
 
   const [scenarios, setScenarios] = useState([]);
   const [addScenarioModalShow, setAddScenarioModalShow] = useState(false);
+
   const addScenarioModalClose = () => {
     setAddScenarioModalShow(false);
   }
 
   useEffect( () => {
+    console.log('useEffect fired')
     axios
       .get('/gobag')
       .then((scenarioData) => {
@@ -21,25 +25,18 @@ const App = () => {
       .catch((err) => {
         console.log('there is an error getting scenarios', err);
       });
-  }, [scenarios]);
+  }, [addScenarioModalShow]);
 
 
-
-  const handleClick = () => {
-    console.log(document.getElementsByClassName('item-entry').length);
-  }
 
   return (
     <div>
       <h1>Go Bag</h1>
-      <button onClick={handleClick}>click</button>
       <h2>Emergency Preparedness Checklist</h2>
       <ScenarioSelector scenarios={scenarios}/>
       <AddScenarioModal open={addScenarioModalShow} onClose={addScenarioModalClose} />
       <Button variant="contained" id="create-scenario-btn" onClick={()=>{setAddScenarioModalShow(true)}}>Create your own scenario</Button>
     </div>
-
-
   )
 }
 
