@@ -19,9 +19,9 @@ const ScenarioListEntry = ({scenario, targetScenario, setTargetScenario }) => {
   const [showInputBox, setShowInputBox] = useState(false);
 
   const handleInputBoxClick = () => {
-
     if (showInputBox) {
       if (newItem !== "") {
+        //adds new item to list of items
         setNewItemArr(newItemArr.concat(newItem));
         setNewItem("");
         setShowInputBox(false);
@@ -55,7 +55,7 @@ const ScenarioListEntry = ({scenario, targetScenario, setTargetScenario }) => {
   }
 
   return (
-    <div>
+    <div className="scenario-card">
       <div className="scenario-description">{scenario.description}<Button variant="outlined" className="scenario-description-btn" onClick={(e)=>handleRemoveClick(e)} startIcon={<DeleteIcon />}>
         Delete
       </Button></div>{expanded ? <div>{scenario.items.map((item, index)=><ItemEntry item={item} key={index} />)}
@@ -70,4 +70,3 @@ const ScenarioListEntry = ({scenario, targetScenario, setTargetScenario }) => {
 
 export default ScenarioListEntry
 
-//"collapse" : "expand "

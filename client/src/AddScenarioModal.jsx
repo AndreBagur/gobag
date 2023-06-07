@@ -44,13 +44,10 @@ const AddScenarioModal = ({open, onClose}) => {
 
   const handleSubmit = () => {
     event.preventDefault();
-      console.log(description);
-      console.log(items.split("\n"));
       var newItem = {
         "description":description,
         "items":items.split("\n")
       }
-      console.log(newItem);
       axios.post('/gobag', newItem)
         .then(()=>{console.log('scenario submitted successfully')})
         .catch((err)=>{console.log('error submitting scenario', err)})
@@ -70,7 +67,7 @@ const AddScenarioModal = ({open, onClose}) => {
         <br></br>
         <label htmlFor="items">
           Items<br></br>
-          <Textarea type="text" name="items" id="asm-items" minRows={2} onChange={(e)=>handleItemsChange(e)}/>
+          <Textarea type="text" name="items" id="asm-items" minRows={3} onChange={(e)=>handleItemsChange(e)}/>
         </label>
         <br></br>
         <Button variant="contained" id="asm-submit-btn" type="submit">Submit</Button>
