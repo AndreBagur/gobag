@@ -35,6 +35,7 @@
 #scenario-count {
   font-size: .5em;
 }
+
 #create-scenario-button {
   margin-top: 50px;
 }
@@ -68,13 +69,8 @@
 
 #add-item-btn {
   margin-left: 30px;
-
-
 }
 
-/* .item-entry:hover {
-  background-color: rgb(29, 123, 206);
-} */
 
 
 
