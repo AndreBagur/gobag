@@ -15,7 +15,6 @@ const ScenarioListEntry = ({scenario, targetScenario, setTargetScenario }) => {
     setTargetScenario(targetScenario.filter((element)=>element !== scenario.description));
   }
 
-
   const [showInputBox, setShowInputBox] = useState(false);
 
   const handleInputBoxClick = () => {

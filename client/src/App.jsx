@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import ScenarioSelector from './ScenarioSelector.jsx'
+import ScenarioSelector from './ScenarioSelector.jsx';
 import ScenarioList from './ScenarioList.jsx';
 import AddScenarioModal from './AddScenarioModal.jsx';
 import Button from '@mui/material/Button';
@@ -28,7 +28,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Go Bag</h1>
+      <h1>Go Bag 🎒</h1>
       <h2>Emergency Preparedness Checklist</h2>
       <ScenarioSelector scenarios={scenarios}/>
       <AddScenarioModal open={addScenarioModalShow} onClose={addScenarioModalClose} />
