@@ -46,7 +46,7 @@ const AddScenarioModal = ({open, onClose}) => {
     event.preventDefault();
       var newItem = {
         "description":description,
-        "items":items.split("\n")
+        "items":items.split("\n").filter((item)=> item !== "")
       }
       axios.post('/gobag', newItem)
         .then(()=>{console.log('scenario submitted successfully')})

@@ -23,8 +23,8 @@ const ScenarioList = ({ scenarios, targetScenario, setTargetScenario }) => {
         </CircularProgress>
       </div> : null}
       {numOfScenarios > 3 ? <div><p id="scenario-count">{numOfScenarios} scenarios:</p></div> : null }
-
-      {scenarios.filter((scenario)=>{return targetScenario.includes(scenario.description)}).map((scenario, index)=> <ScenarioListEntry scenario={scenario} targetScenario={targetScenario} setTargetScenario={setTargetScenario} key={index}/>) }
+      {scenarios.filter((scenario)=>{return targetScenario.includes(scenario.description)}).map((scenario, index)=>
+        <ScenarioListEntry scenario={scenario} targetScenario={targetScenario} setTargetScenario={setTargetScenario} key={index}/>) }
     </div>
   )
 }

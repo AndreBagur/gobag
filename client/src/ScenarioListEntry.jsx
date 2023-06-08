@@ -56,9 +56,10 @@ const ScenarioListEntry = ({scenario, targetScenario, setTargetScenario }) => {
 
   return (
     <div className="scenario-card">
-      <div className="scenario-description">{scenario.description}<Button variant="outlined" className="scenario-description-btn" onClick={(e)=>handleRemoveClick(e)} startIcon={<DeleteIcon />}>
-        Delete
-      </Button></div>{expanded ? <div>{scenario.items.map((item, index)=><ItemEntry item={item} key={index} />)}
+      <div className="scenario-description">{scenario.description}
+        <Button variant="outlined" className="scenario-description-btn" onClick={(e)=>handleRemoveClick(e)} startIcon={<DeleteIcon />}>Delete</Button>
+      </div>
+      {expanded ? <div>{scenario.items.map((item, index)=><ItemEntry item={item} key={index} />)}
       {newItemArr.map((item, index)=><ItemEntry item={item} key={index} />)}
       {showInputBox? <Input onChange={(e)=>handleChange(e)} onKeyPress={(e)=>handleKeyPress(e)} /> : null}</div> : null}
       <Button onClick={handleCollapseClick}>{expanded ? <ExpandLessIcon></ExpandLessIcon> : <ExpandMoreIcon></ExpandMoreIcon>} items</Button>
