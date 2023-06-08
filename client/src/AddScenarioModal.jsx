@@ -31,6 +31,7 @@ const AddScenarioModal = ({open, onClose}) => {
   if (!open) {
     return (null);
   }
+
   const [description, setDesription] = useState("");
   const [items, setItems] = useState("")
 
@@ -57,23 +58,23 @@ const AddScenarioModal = ({open, onClose}) => {
 
   return (
     <div style={OVERLAY_STYLES}>
-    <div style={MODAL_STYLES}>
-      <form onSubmit={handleSubmit}>
-        <h2>Add a scenario</h2>
-        <label htmlFor="decription">
-          Description<br></br>
-          <Input type="text" name="description" id="asm-description" onChange={(e)=>handleDescChange(e)}/>
-        </label>
-        <br></br>
-        <label htmlFor="items">
-          Items<br></br>
-          <Textarea type="text" name="items" id="asm-items" minRows={3} onChange={(e)=>handleItemsChange(e)}/>
-        </label>
-        <br></br>
-        <Button variant="contained" id="asm-submit-btn" type="submit">Submit</Button>
-        <Button variant="contained" id="asm-exit-btn" onClick={onClose}>Exit</Button>
-      </form>
-    </div>
+      <div style={MODAL_STYLES}>
+        <form onSubmit={handleSubmit}>
+          <h2>Add a scenario</h2>
+          <label htmlFor="decription">
+            Description<br></br>
+            <Input type="text" name="description" id="asm-description" onChange={(e)=>handleDescChange(e)}/>
+          </label>
+          <br></br>
+          <label htmlFor="items">
+            Items<br></br>
+            <Textarea type="text" name="items" id="asm-items" minRows={3} onChange={(e)=>handleItemsChange(e)}/>
+          </label>
+          <br></br>
+          <Button variant="contained" id="asm-submit-btn" type="submit">Submit</Button>
+          <Button variant="contained" id="asm-exit-btn" onClick={onClose}>Exit</Button>
+        </form>
+      </div>
     </div>
   )
 }

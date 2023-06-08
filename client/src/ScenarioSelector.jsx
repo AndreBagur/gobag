@@ -16,19 +16,6 @@ const ScenarioSelector = ({ scenarios }) => {
     }
   }
 
-
-  const updateCount = () => {
-    //console.log('update count',document.getElementsByClassName('item-entry').length)
-  }
-
-  const handleClick = (e) => {
-
-    setTimeout(updateCount, 1000)
-
-  }
-
-
-
   return (
     <div className="scenario-selector-div">
       <FormControl fullWidth>
@@ -39,7 +26,7 @@ const ScenarioSelector = ({ scenarios }) => {
           value=""
           label="choose-a-scenario"
           onChange={handleChange}
-          onClick={handleClick}>
+        >
           {scenarios.map((scenario, index)=><MenuItem value={scenario.description} key={index}>{scenario.description}</MenuItem>)}
         </Select>
       </FormControl>

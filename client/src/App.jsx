@@ -16,7 +16,6 @@ const App = () => {
   }
 
   useEffect( () => {
-    console.log('useEffect fired')
     axios
       .get('/gobag')
       .then((scenarioData) => {
@@ -26,8 +25,6 @@ const App = () => {
         console.log('there is an error getting scenarios', err);
       });
   }, [addScenarioModalShow]);
-
-
 
   return (
     <div>
