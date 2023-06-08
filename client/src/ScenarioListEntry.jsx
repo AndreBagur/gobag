@@ -20,6 +20,7 @@ const ScenarioListEntry = ({scenario, targetScenario, setTargetScenario }) => {
 
   const handleInputBoxClick = () => {
     if (showInputBox) {
+
       if (newItem !== "") {
         //adds new item to list of items
         setNewItemArr(newItemArr.concat(newItem));
@@ -29,7 +30,7 @@ const ScenarioListEntry = ({scenario, targetScenario, setTargetScenario }) => {
         setShowInputBox(false);
       }
     } else {
-      setShowInputBox(true);
+        setShowInputBox(true);
     }
   }
 
@@ -61,7 +62,7 @@ const ScenarioListEntry = ({scenario, targetScenario, setTargetScenario }) => {
       </div>
       {expanded ? <div>{scenario.items.map((item, index)=><ItemEntry item={item} key={index} />)}
       {newItemArr.map((item, index)=><ItemEntry item={item} key={index} />)}
-      {showInputBox? <Input onChange={(e)=>handleChange(e)} onKeyPress={(e)=>handleKeyPress(e)} /> : null}</div> : null}
+      {showInputBox? <Input autoFocus id="item-input-box" onChange={(e)=>handleChange(e)} onKeyPress={(e)=>handleKeyPress(e)} /> : null}</div> : null}
       <Button onClick={handleCollapseClick}>{expanded ? <ExpandLessIcon></ExpandLessIcon> : <ExpandMoreIcon></ExpandMoreIcon>} items</Button>
       <Button id="add-item-btn" onClick={handleInputBoxClick}>+ item</Button>
     </div>

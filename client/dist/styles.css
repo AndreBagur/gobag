@@ -2,7 +2,7 @@
 
 #root {
   font-family: Arial, Helvetica, sans-serif;
-  padding-left: 400px;
+  padding-left: 200px;
 }
 
 #asm-description {
@@ -20,12 +20,10 @@
 }
 
 #asm-submit-btn {
-  /* padding: 10px; */
   margin-right: 180px;
 }
 
 #progress-message {
-  /* padding-top: 20px; */
   font-size: .5em;
 }
 
