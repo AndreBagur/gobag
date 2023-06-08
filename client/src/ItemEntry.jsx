@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 
 
 
-const ItemEntry = (item, key) => {
+const ItemEntry = ({item}) => {
 
   const [checked, setChecked] = useState(false);
 
@@ -13,7 +13,7 @@ const ItemEntry = (item, key) => {
   return (
     <div>
       <div className="item-entry" >
-        <Checkbox {...label} checked={checked} onChange={()=>setChecked(!checked)} color="success"/>{item.item}
+        <Checkbox {...label} checked={checked} onChange={()=>setChecked(!checked)} color="success"/>{item}
       </div>
     </div>
 

@@ -65,7 +65,6 @@ const ScenarioListEntry = ({scenario, targetScenario, setTargetScenario }) => {
       <Button onClick={handleCollapseClick}>{expanded ? <ExpandLessIcon></ExpandLessIcon> : <ExpandMoreIcon></ExpandMoreIcon>} items</Button>
       <Button id="add-item-btn" onClick={handleInputBoxClick}>+ item</Button>
     </div>
-
   )
 }
 

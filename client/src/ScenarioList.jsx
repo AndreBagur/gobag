@@ -11,7 +11,11 @@ const ScenarioList = ({ scenarios, targetScenario, setTargetScenario }) => {
 
     var percentage = numOfScenarios / 3 * 100;
 
-    const message = ['Try adding a scenario to increase your preparedness score.', 'Keep adding more scenarios to increase your score.', 'One more and you are there.', 'Great job! Keep going!']
+    const message = [
+      'Try adding a scenario to increase your preparedness score.',
+      'Keep adding more scenarios to increase your score.',
+      'One more and you are there.', 'Great job! Keep going!'
+    ]
 
   return (
     <div className="scenario-list">

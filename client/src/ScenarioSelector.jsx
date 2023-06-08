@@ -8,6 +8,7 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 
 const ScenarioSelector = ({ scenarios }) => {
+
   const [targetScenario, setTargetScenario] = useState([])
 
   const handleChange = (e) => {
