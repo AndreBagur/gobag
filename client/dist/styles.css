@@ -29,15 +29,16 @@
 
 #progress-circle {
   margin-top: 20px;
-  margin-bottom: 30px;;
+  margin-bottom: 30px;
 }
 
 #scenario-count {
   font-size: .5em;
 }
 
-#create-scenario-button {
-  margin-top: 50px;
+#create-scenario-btn {
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .scenario-description {
